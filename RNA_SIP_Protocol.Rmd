@@ -355,5 +355,51 @@ We calculated the correction factor in step 13 of Gradient Setup. Subtract that 
 
 
 
+# Items used in protocol
+
+
+Items used in protocol
+
+<center> 
+
+Item Description  | Cat. No.
+------------- | -------------
+KAPA SYBR FAST One Step qRT-PCR Universal 1,000 20 uL rxns | KK4652
+MasterPure™ Complete DNA and RNA Purification Kit | MC85200
+Eppendorf 500 μL 96 deep well plates | 9510131801
+Eppendorf 96 deep well plate sealing mat | 0030127978 
+Millipore Express 0.2 μM Filters 25 mm | GPWP02500	
+Cesium Triflouroacetate 50g | AA4463318
+iScript Select cDNA Synthesis Kit | 1709987
+BioRad “B” PCR Plate Sealing Film | MSB1001
+BD Precision Glide Needles, 23 gauge | 14-826A
+USA Scientific PCR Cooler Tube Rack | 4051-0509
+Corning Sterile Reagent Reservoirs | 4870
+GoTaq DNA Polymerase | M3008
+ThermoScientific Tris-HCL, 1M Solution pH 8.0, Ultrapure/molecular grade | J22638-AE
+Invitrogen 0.5 M EDTA pH 8.0 | AM9260G
+DEPC-Treated Water | AM9906
+Beckman optiseal polypropylene centrifuge tubes, 4.9 mL | 362185
+ThermoScientific Potassium Chloride, 99% Molecular Grade | J64189.36
+Fisher Tris-EDTA (10X Solution), pH 7.4 | BP2477-100 
+Axygen 1.7mL low retention microcentrifuge tubes | MCT-175-C-S
+Axygen 0.2ul low retention, Maximum Recovery, PCR tubes | PCR-02-L-C
+BioRad Multiplate PCR Plates, 96-well clear | MLL9601
+Costar 96-well Black Flat bottom Polystrene, 25 per pack | 3915
+SuperScript® III First-Strand Synthesis System | 18080-051
+NEBNext® Ultra II Non-Directional RNA Second Strand Synthesis Module | E6111S
+RNeasy MinElute Cleanup Kit; 50 rxns | 74204
+Ovation Complete Prokaryotic RNA-Seq DR Multiplex System 1-8 (32 rxn) | 0326-32
+Agilent High Sensitivity DNA Kit | 5067-4626
+Agilent DNA 1000 kit | 5067-1504
+Saga Sciences 1.5% agarose cassettes | BDF1510
+Saga Sciences gNDA for 1.5% internal standard gel cassettes | CIS1504
+
+
+</center>
+
+Sourced isotopes from Cambridge Isotope Laboratories. Sourced primers from New England Biolabs (100 μM, hydrated). 
+
+
 
 
