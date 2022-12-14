@@ -8,7 +8,7 @@ output:
     toc_depth: 6
     code_folding: hide
     number_sections: false
-    theme: cosmo
+    theme: lumen
 
 knit: (function(input_file, encoding) {
   out_dir <- 'docs';
@@ -105,16 +105,19 @@ Also, run duplicates of unfractionated RNA.
 1.	Add 1X TE to wells in plate. For all samples, add 48 μL 1X TE. For standards, add 50 μL – x 1X TE (for example, for the 5 ng/mL well, add 45 μL). Use table below if needed. 
     + Use the 1:10 RNA diluted stock (10 ug/ml) for the *2 highest standards in the curve, and then use the 1:1000 (100 ng/ml) for the rest.
 
+<center>
 
-Well (see plate example)    |   Volume 1X TE (L)    |   Volume of RNA (L) | RNA Concentration (ng/μL)
-------------- | ------------- | -------------
-B2    |   49    |   1*    |   100
-C2    |   0    |   50    |   50
-D2    |   25    |   25    |   25
-E2    |   40    |   10    |   10
-F2    |   45    |   5    |   5
-G2    |   49    |   1    |   1
-B3    |   50    |   0    |   0
+| Well   |   Volume 1X TE (μL)    |   Volume of RNA (μL) | RNA Concentration (ng/μL) |
+|:-------------:|:-------------:|:-------------:|:-------------:|
+| B2    |   49    |   1*    |   100 |
+| C2    |   0    |   50    |   50 |
+| D2    |   25    |   25    |   25 |
+| E2    |   40    |   10    |   10 |
+| F2    |   45    |   5    |   5 |
+| G2    |   49    |   1    |   1 |
+| B3    |   50    |   0    |   0 |
+
+</center>
 
 *use 1:10 – 10 g/ml	RNA concentration (ng/mL)
 Fill rest with nucleic acid	49	1	Determine by standard curve
@@ -161,7 +164,15 @@ Fill rest with nucleic acid	49	1	Determine by standard curve
 4.	First, account for the 1:100 dilution you performed to prep your plate by multiplying by 100.
 5.	Second, change units (from ng/ml to ng/ μL) by dividing by 1000
 
-# Refractometer Modification
+
+
+# Before you begin
+
+## Calculate RNA input
+
+Using the ribogreen measurements, calculate how many μL of RNA is needed from each sample for a total of 500-750 ng (I use 500 ng). You may need to make 10X, 100X, or 1000X dilutions of your RNA in 1X TE in order to measure them properly. I always do a freeze thaw after my RNA extraction to make sure my RNA is properly hydrated.  
+
+## Refractometer Modification
 
 [This modification comes from the Buckley lab](https://github.com/buckleylab/Buckley_Lab_SIP_project_protocols/blob/master/RNA_SIP/RNA_SIP.md)
 
@@ -190,7 +201,9 @@ Fill rest with nucleic acid	49	1	Determine by standard curve
 5.	Hit calibrate, wait for the instrument to calibrate, then hit read. It should read exactly 1.3330. If it does not, kim-wipe the water and repeat step 4 again. It is important that the refractometer is calibrated consistently between SIP runs. 
 6.	If you want to remove the electrical tape, then just pull it off and clean the refractometer with 100% isopropanol and MilliQ water. 
 
-# Gradient Salt Solution
+
+
+## Make Gradient Salt Solution
 
 Recipe from [Dunford and Neufeld, 2010](https://www.ncbi.nlm.nih.gov/pubmed/20729803)
 
@@ -205,17 +218,19 @@ Combine
 The final solution is 0.1 M Tris, 0.1 M KCl and 1 mM EDTA.
 
 
+## Hydrate your CsTFA
+
+The day before you setup a spin, hydrate your 50 g powdered CsTFA with 13 mL of GSS. Shake vigorously and allow to come to room temperature for several hours to overnight (I do overnight). Measure the RI of the GSS you hydrate the CsTFA with (after the calibration). GSS can increase in density due to evaporation over time. 
+
+*Note:* CsTFA is extremely hydroscopic (i.e. loves water) and will become crusty if you leave the powder out after opening the bottle (i.e. absorbs water through humidity). This step ensures consistency between SIP spins over time. 
+
+
 # Gradient Setup
 
 Protocol is a derivation of the [Huber lab protocol](https://www.protocols.io/view/rna-extraction-protocol-from-rna-sip-experiments-3byl438ogo5d/v2), [Lueders 2010](https://www.infona.pl/resource/bwmeta1.element.springer-93db329b-6ce7-34d7-a19c-96cac2da3334), [Buckley Lab RNA SIP Protocol](https://github.com/buckleylab/Buckley_Lab_SIP_project_protocols/blob/master/RNA_SIP/RNA_SIP.md), and [Roey Angel's protocol](https://www.protocols.io/view/rna-stable-isotope-probing-bpwympfw.html)
 
-**Day Before Gradient Setup ** 
 
-The day before you setup a spin, hydrate your 50 g powdered CsTFA with 13 mL of GSS. Shake vigorously and allow to come to room temperature for several hours to overnight (I do overnight). Measure the RI of the GSS you hydrate the CsTFA with (after the calibration). GSS can increase in density due to evaporation over time. 
-
-* Note: CsTFA is extremely hydroscopic (i.e. loves water) and will become crusty if you leave the powder out after opening the bottle (i.e. absorbs water through humidity). This step ensures consistency between SIP spins over time. 
-
-**Day of Gradient Setup ** 
+**Protocol** 
 
 1.	Rinse Beckman tubes with 500 μL of 70 % molecular grade ethanol. Hang upside to dry and tap every so often to get out the excess ethanol. 
 2.	Label 15 ml tubes with sample names. Do not run more than 6 - 8 samples. You may want to include one No RNA control at first. 
@@ -353,12 +368,133 @@ We calculated the correction factor in step 13 of Gradient Setup. Subtract that 
 
 # KAPA SYBR Fast One-Step RT-qPCR 
 
+Follow using the manufacturer's instructions
 
+# Check out your curves
+
+First, normalize your RNA concentrations to the SIP fraction with the highest concentration (Ratio of Maximum Quantity). Graph your 12C control and 13C-labelled SIP fractions with corrected Buoyant Density on the x-axis and normalized Ratio of Maximum Quantity on the y-axis. 
+
+```{r qpcr_a, warning=FALSE, message=FALSE, error=FALSE,fig.height=12,fig.width=10, dpi=300}
+library(ggplot2)
+library(tidyverse)
+
+qpcr=read.csv(file='/Users/oliviaahern/Documents/R/Exp4/25Aug22/qpcr_6Oct22.csv',
+              header=T)
+# dim(qpcr)
+qpcr_sub=subset(qpcr, Buckley > 1.74)
+
+make_bar_relabun <- function(df, selection){
+  df_out <- df %>% 
+    filter(MC %in% c("MC1",selection))
+  ggplot(df_out, aes(x = Buckley, y = qPCR_RMAX)) +
+    scale_fill_manual(values=colls) +
+    scale_colour_manual(values=colls) +
+    facet_grid(~TP, scale='free_x', space="free", shrink=TRUE) +
+    geom_point(aes(colour=MC, 
+                   fill = MC), size=1.3) + 
+    geom_line(aes(colour=MC)) + 
+    labs(x="Buoyant Density (g/mL)", y = "Ratio of Maximum Quantity") +
+    theme_bw() +  scale_x_continuous(limits = c(1.76, 1.83)) +
+    theme(axis.text = element_text(color ='black',size=6, hjust=1,vjust=1),
+          axis.text.x=element_text(size=6, angle=90),
+          axis.title = element_text(color='black',face='bold',size=8),
+          legend.position = "none",
+          panel.grid=element_blank(),
+          legend.text = element_text(size=8),
+          legend.key.size = unit(0.25,'cm'),
+          strip.text.x = element_text(
+            size = 10, color = "black", face = "bold"),
+          strip.background = element_rect(
+            color="gray80", fill="gray97", size=1, linetype="solid"),
+          panel.spacing = unit(0.05, "lines")
+    )
+}
+
+colls=c('gray50',"#a44f9a")
+m2=make_bar_relabun(qpcr_sub, "MC2") + geom_text(data = data.frame(x = 1.81, y = 1, TP=1.5, label = "MC1 12 Control"), 
+                   aes(x = x, y = y, label = label), size = 3,
+                   colour="gray50",fontface='bold') + geom_text(data = data.frame(x = 1.81, y = .90, TP=1.5, label = "MC2 13C-Methanol"), 
+                   aes(x = x, y = y, label = label), size = 3,
+                   colour="#a44f9a", fontface='bold')
+colls=c('gray50',"#6870c8")
+m3=make_bar_relabun(qpcr_sub, "MC3")+ geom_text(data = data.frame(x = 1.81, y = 1, TP=1.5, label = "MC1 12 Control"), 
+                   aes(x = x, y = y, label = label), size = 3,
+                   colour="gray50",fontface='bold') + geom_text(data = data.frame(x = 1.81, y = .90, TP=1.5, label = "MC3 13C-Ethanol"), 
+                   aes(x = x, y = y, label = label), size = 3,
+                   colour="#6870c8", fontface='bold')
+colls=c('gray50',"#56ae6c")
+m4=make_bar_relabun(qpcr_sub, "MC4") + geom_text(data = data.frame(x = 1.81, y = 1, TP=1.5, label = "MC1 12 Control"), 
+                   aes(x = x, y = y, label = label), size = 3,
+                   colour="gray50",fontface='bold') + geom_text(data = data.frame(x = 1.81, y = .90, TP=1.5, label = "MC4 13C-Acetate"), 
+                   aes(x = x, y = y, label = label), size = 3,
+                   colour="#56ae6c", fontface='bold')
+colls=c('gray50',"#af953c")
+m5=make_bar_relabun(qpcr_sub, "MC5") + geom_text(data = data.frame(x = 1.81, y = 1, TP=1.5, label = "MC1 12 Control"), 
+                   aes(x = x, y = y, label = label), size = 3,
+                   colour="gray50",fontface='bold') + geom_text(data = data.frame(x = 1.81, y = .90, TP=1.5, label = "MC5 13C-Glucose"), 
+                   aes(x = x, y = y, label = label), size = 3,
+                   colour="#af953c", fontface='bold')
+colls=c('gray50',"#ba4a4f")
+m6=make_bar_relabun(qpcr_sub, "MC6") + geom_text(data = data.frame(x = 1.81, y = 1, TP=1.5, label = "MC1 12 Control"), 
+                   aes(x = x, y = y, label = label), size = 3,
+                   colour="gray50",fontface='bold') + geom_text(data = data.frame(x = 1.81, y = .90, TP=1.5, label = "MC6 13C-Xylose"), 
+                   aes(x = x, y = y, label = label), size = 3,
+                   colour="#ba4a4f", fontface='bold')
+library(cowplot)
+plot_grid(m2,m3,m4,m5,m6,aligh='hv',ncol=1)
+
+```
+
+Above are buoyant density curves over time from a batch experiment using 20% 13C-labelled substrates vs. the control. Note how different substrates show different buoyant density curves over time. 
+
+Determine how many RNA SIP fractions you want to send for 16S and 18S amplicon sequencing and then proceed to the next step. 
+
+# cDNA First Strand Synthesis
+
+This protocol is from [Biorad's iScript Select cDNA synthesis ](https://www.bio-rad.com/webroot/web/pdf/lsr/literature/10001023B.pdf)
+
+This is for 20 μL reactions. But you can use 10 μL reactions if just using the cDNA product for one amplicon PCR. 
+
+**Protocol 20 μL Reactions**
+
+In PCR hood, make up master mix over ice and dispense 7 μL into each PCR tube. Add nuclease free water in hood and then add template out of hood. 
+
+We normalize each of our reactions:
+
+* Community samples are 20 μL reactions and input of 25 ng
+* Fractions are 10 μL reactions, input of either: 
+    + 50 pg 
+    + 0.5 ng 
+    + 2.5 ng
+    
+    
+Component   |   Vol/Rxn   |   Vol/13 Rxns
+------------- | -------------   | -------------
+5x iScript Reaction Mix   |   4   |   52
+iScript Reverse Transcriptase   |   1   |   13
+Random Primers    |   2   |   26
+Nuclease-free water   |   Variable   |   Variable
+RNA template (100 fg - 1 ug total)   |   Variable   |   Variable
+
+
+Place into thermocycler and run program under Olivia A > iScript cDNA 1708897. 
+
+  **Thermocylcer Program**
+
+    Priming  5 min at 25°C
+    Reverse Transcription  30 min at 42°C
+    RT inactivation  5 min at 85°C
+    Optional Hold at 4°C
+
+# Ribogreen everything
+
+Read protocol from above. 
+
+# Send for Sequencing
+
+We are sending our cDNA libraries to [IMR](https://imr.bio/protocols.html) for 16S and 18S sequencing.
 
 # Items used in protocol
-
-
-Items used in protocol
 
 <center> 
 
