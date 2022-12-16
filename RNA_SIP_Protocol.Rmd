@@ -21,8 +21,10 @@ knit: (function(input_file, encoding) {
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+This is the Huber Lab RNA SIP protocol that was co-written by Caroline Fortunato, Amy Smith, Sabrina Elkassas, and Olivia Ahern. It was last updated 27 September 2022 by Olivia Ahern. Another version of this protocol, using the old CsTFA formulation (liquid) [can be found on protocols.io](https://www.protocols.io/view/density-gradient-fractionation-of-rna-from-rna-sip-36wgqm1xvk57/v3). 
 
-This protocol is to extract RNA and fractionate from 20% 13C-labelled cultures from Siders Pond into 22 fractions.  
+
+This protocol is to extract RNA and fractionate from 20% 13C-labelled cultures from Siders Pond into 22 fractions. The experiment that used this protocol can be found [at Olivia Ahern's github page](https://omahern.github.io/Exp4/).  
 
 
 # RNA Extraction
@@ -368,7 +370,21 @@ We calculated the correction factor in step 13 of Gradient Setup. Subtract that 
 
 # KAPA SYBR Fast One-Step RT-qPCR 
 
-Follow using the manufacturer's instructions
+Follow using the manufacturer's instructions with 10 μL reactions and 1 μL of RNA for input. 
+
+**Master Mix**
+
+| Reagent   |   Initial Conc.   |   Final Conc. | Volume 1 rxn (μL) | Volume 96+6 rxns (μL) |
+|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
+| SYBR 2X buffer | 2X | 1X | 5 | 540 |
+| dH2O | - |	-	| 3 |	324 |
+| 805R Primer	| 10 μM	| 0.4 μM | 0.4 | 43.2 |
+| 341F Primer	| 10 μM	| 0.2 μM	| 0.2	| 21.6 |
+| 50X Rox High	| 50X	| 1X	| 0.2	| 21.6 |
+| RT Mix	| 50X	| 1X	| 0.2	| 21.6 |
+| Template	| - |	-	| 1 |	108 |
+
+
 
 # Check out your curves
 
