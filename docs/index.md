@@ -538,14 +538,6 @@ Axygen 1.7mL low retention microcentrifuge tubes | MCT-175-C-S
 Axygen 0.2ul low retention, Maximum Recovery, PCR tubes | PCR-02-L-C
 BioRad Multiplate PCR Plates, 96-well clear | MLL9601
 Costar 96-well Black Flat bottom Polystrene, 25 per pack | 3915
-SuperScript® III First-Strand Synthesis System | 18080-051
-NEBNext® Ultra II Non-Directional RNA Second Strand Synthesis Module | E6111S
-RNeasy MinElute Cleanup Kit; 50 rxns | 74204
-Ovation Complete Prokaryotic RNA-Seq DR Multiplex System 1-8 (32 rxn) | 0326-32
-Agilent High Sensitivity DNA Kit | 5067-4626
-Agilent DNA 1000 kit | 5067-1504
-Saga Sciences 1.5% agarose cassettes | BDF1510
-Saga Sciences gNDA for 1.5% internal standard gel cassettes | CIS1504
 
 
 </center>
