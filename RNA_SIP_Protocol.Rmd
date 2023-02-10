@@ -522,7 +522,7 @@ Eppendorf 500 μL 96 deep well plates | 9510131801
 Eppendorf 96 deep well plate sealing mat | 0030127978 
 Millipore Express 0.2 μM Filters 25 mm | GPWP02500	
 Cesium Triflouroacetate 50g | AA4463318
-iScript Select cDNA Synthesis Kit | 1709987
+iScript Select cDNA Synthesis Kit | 1708897
 BioRad “B” PCR Plate Sealing Film | MSB1001
 BD Precision Glide Needles, 23 gauge | 14-826A
 USA Scientific PCR Cooler Tube Rack | 4051-0509
