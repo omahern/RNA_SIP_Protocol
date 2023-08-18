@@ -326,6 +326,8 @@ Before precipitating – if you have an odd number of plates – make a “buddy
 
 # Quantification/Correction Factors 
 
+## Quantifying
+
 Ribogreen all fractions to determine concentrations.
 Using the protocol described on p. 4-5 but with 2 μL template and modified plate setup to allow easier quanitifcation from 96 well plates. 
 
@@ -367,6 +369,15 @@ We calculated the correction factor in step 13 of Gradient Setup. Subtract that 
     RI observed = Either the GSS + CsTFA or fractions
     RI Buffer = GSS + Formamide (no CSTFA)
     Buoyant Density = 163.559 – 262.271*(RI corrected) + 105.281*(RI corrected)^2
+
+## Correcting for differences in lot numbers
+
+[ThermoFisher/Fisher Scientific](https://www.fishersci.com/shop/products/cesium-trifluoroacetate-thermo-scientific/AA4463309) sources their CsTFA from [Alfa Aesar](https://www.thermofisher.com/order/catalog/product/044633.18). Alfa Aesar sources it from a third party. During the year that it took me to spin 84 RNA-SIP samples, Alfa Aesar ran out of the lot I was originally using [lot #X28H038](https://www.thermofisher.com/document-connect/document-connect.html?url=https://assets.thermofisher.com/TFS-Assets%2FCCG%2FAlfa-Aesar%2Fcertificate%2FCertificates-of-Analysis%2F044633-X28H038.pdf) and it was replaced by [lot #T12J009](https://www.thermofisher.com/document-connect/document-connect.html?url=https://assets.thermofisher.com/TFS-Assets%2FCCG%2FAlfa-Aesar%2Fcertificate%2FCertificates-of-Analysis%2F044633-T12J009.pdf). The two different lots had two different purities from their Certificate of Analysis, X28H038 was 99.1% pure and T12J009 was 99.9% pure. When the same sample was run twice, the purer T12J009 had 12C peaks that were ~1.3727 while the less pure X28H038 had denser 12C peaks of ~1.3731. I measured the RI of the two different lots (measured the RI after hydrating overnight with 13 mL GSS) and found that there was a difference of RI 0.0004. Therefore, we could correct for differences between lots. 
+
+Remember to take down the lot # of the CsTFA you have and check the purity from the COA. 
+
+You should also note that it took ~5-6 months for them to restock the CsTFA. They tend to make a giant batch, bottle it all up, sell it all, then wait and make new stuff. So, if you can, buy all of your CsTFA you need for the entire project at once. 
+
 
 # KAPA SYBR Fast One-Step RT-qPCR 
 
