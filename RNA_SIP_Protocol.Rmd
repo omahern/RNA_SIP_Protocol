@@ -516,7 +516,7 @@ Place into thermocycler and run program under Olivia A > iScript cDNA 1708897.
 
 # 16S PCR 
 
-To make sure that the cDNA synthesis worked, we run a quick 16S PCR with the [taq](https://www.neb.com/products/m0531-phusion-high-fidelity-pcr-master-mix-with-hf-buffer#Protocols,%20Manuals%20&%20Usage) and [515F/926R](https://ami-journals.onlinelibrary.wiley.com/doi/full/10.1111/1462-2920.13023) primers from the [sequencing center](https://imr.bio/protocols.html). 
+To make sure that the cDNA synthesis worked, we run a quick 16S PCR with the [taq](https://www.neb.com/products/m0531-phusion-high-fidelity-pcr-master-mix-with-hf-buffer#Protocols,%20Manuals%20&%20Usage) and [515F/926R](https://ami-journals.onlinelibrary.wiley.com/doi/full/10.1111/1462-2920.13023) primers from the [sequencing center](https://imr.bio/protocols.html). We are just going to run a subset of our samples (out of the 14 96-well plates for sequencing, we will PCR maybe 4-8 samples per plate).
 
 
 Component   |   Conc   |   10 uL Rxn
