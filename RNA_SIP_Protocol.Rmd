@@ -482,27 +482,28 @@ This protocol is from [Biorad's iScript Select cDNA synthesis ](https://www.bio-
 
 This is for 20 μL reactions. But you can use 10 μL reactions if just using the cDNA product for one amplicon PCR. 
 
-**Protocol 20 μL Reactions**
+**Protocol 12 μL Reactions**
 
-In PCR hood, make up master mix over ice and dispense 7 μL into each PCR tube. Add nuclease free water in hood and then add template out of hood. 
+In PCR hood (after waiting for the UV light to go off and wiping down with 10% bleach, 70% ethanol, and RNASeZap), make up master mix using the volumes below in the low input tubes on ice. Dispense 4.2 μL into each 200 μL PCR tube tube over ice. Spin down the samples on a microcentrifuge so that the mix is on the bottom of the tube. Add nuclease-free water (from kit) to each tube in the pre-calculated values. 
 
-We normalize each of our reactions:
-
-* Community samples are 20 μL reactions and input of 25 ng
-* Fractions are 10 μL reactions, input of either: 
-    + 50 pg 
-    + 0.5 ng 
-    + 2.5 ng
-    
-    
-Component   |   Vol/Rxn   |   Vol/13 Rxns
+Component   |   Vol/Rxn   |   Vol/35 Rxns
 ------------- | -------------   | -------------
-5x iScript Reaction Mix   |   4   |   52
-iScript Reverse Transcriptase   |   1   |   13
-Random Primers    |   2   |   26
+5x iScript Reaction Mix   |   2.4   |   84
+iScript Reverse Transcriptase   |   1.2   |   42
+Random Primers    |   0.6   |   21
 Nuclease-free water   |   Variable   |   Variable
 RNA template (100 fg - 1 ug total)   |   Variable   |   Variable
 
+For a 12 μL, the total volume for the master mix in each tube should be 4.2 μL and the volume of the RNA + water should be 7.8 μL. 
+
+RNA Input for each reaction:
+
+* Community samples are 12 μL reactions and input of 25 ng
+* Fractions are 12 μL reactions, input of either: 
+    + 100 pg 
+    + 500 pg
+    + 1.5 ng
+  
 
 Place into thermocycler and run program under Olivia A > iScript cDNA 1708897. 
 
@@ -513,9 +514,37 @@ Place into thermocycler and run program under Olivia A > iScript cDNA 1708897.
     RT inactivation  5 min at 85°C
     Optional Hold at 4°C
 
-# Ribogreen everything
+# 16S PCR 
 
-Read protocol from above. 
+To make sure that the cDNA synthesis worked, we run a quick 16S PCR with the [taq](https://www.neb.com/products/m0531-phusion-high-fidelity-pcr-master-mix-with-hf-buffer#Protocols,%20Manuals%20&%20Usage) and [515F/926R](https://ami-journals.onlinelibrary.wiley.com/doi/full/10.1111/1462-2920.13023) primers from the [sequencing center](https://imr.bio/protocols.html). 
+
+
+Component   |   Conc   |   10 uL Rxn
+------------- | -------------   | -------------
+Water   |   X   |   6.30
+HF PCR Buffer   |   5X   |   2
+dNTPS    |   10 mM   |   0.2
+F Primer 515Y   |   10 uM   |   0.2
+R Primer 926R   |   10 uM   |   0.2
+Phusion Taq   |   2 U/uL  |   0.1
+Template | X | 1
+
+
+
+  **Thermocylcer Program**
+
+    1 min at 98°C
+    
+    25 cycles of: 
+    30 sec at 98°C
+    30 sec at 55°C
+    60 sec at 72°C
+    
+    9 min at 72°C
+    Optional Hold at 4°C
+    
+
+Verify the bands using a 1% agarose gel. 
 
 # Send for Sequencing
 
