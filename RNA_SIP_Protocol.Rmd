@@ -484,7 +484,9 @@ This is for 20 μL reactions. But you can use 10 μL reactions if just using the
 
 **Protocol 12 μL Reactions**
 
-In PCR hood (after waiting for the UV light to go off and wiping down with 10% bleach, 70% ethanol, and RNASeZap), make up master mix using the volumes below in the low input tubes on ice. Dispense 4.2 μL into each 200 μL PCR tube tube over ice. Spin down the samples on a microcentrifuge so that the mix is on the bottom of the tube. Add nuclease-free water (from kit) to each tube in the pre-calculated values. 
+In PCR hood (after waiting for the UV light to go off and wiping down with 10% bleach, 70% ethanol, and RNASeZap), make up master mix using the volumes below in the low input 1.5 mL tubes on ice or a cold block. Dispense 4.2 μL into each 200 μL PCR tube tube over ice or a cold block. 
+
+Spin down the samples on a microcentrifuge so that the mix is on the bottom of the tube. Add nuclease-free water (from kit) to each tube in the pre-calculated values. 
 
 Component   |   Vol/Rxn   |   Vol/35 Rxns
 ------------- | -------------   | -------------
